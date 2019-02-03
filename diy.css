@@ -1,0 +1,57 @@
+/*<!--文档说明
+Author：白皓天(Haotian Bai)
+Goal：构建动态网站(Building Dynamic Websites)
+The Document is written for course project, building dynamic websites.
+
+2019.1.31-2019.2.20
+-->*/
+.bg_img
+{
+    position:fixed;
+    height:100%;
+    width:100%;
+    min-width:100%;
+    top:0;
+    left:0;
+    z-index:-10;/*最底层*/
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-background-size:cover ;
+    -o-background-size:cover;
+    background-position:center 0;/*居中*/
+}
+p{
+    font-size:15px;
+    vertical-align: middle;
+}
+body{
+    font-family: Verdana, sans-serif;
+}
+.container
+{
+    height:334px;
+    width:287px;
+    position:relative;
+    float: left;
+    box-shadow: 0 0 black;
+    background-color: #d6dfeac7;
+    padding-top: 150px;
+    padding-left: 100px;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+.header {
+    height: 62px;
+    overflow: hidden;/*超出范围，不出现滚动条*/
+    zoom: 1;
+
+}
+.header_audio{
+    padding-right:40px;/*padding 内边距，margin 外边距*/
+}
+#content{
+position:relative;
+    top:-120px;
+    left:10px;
+    width: 284px;
+}
