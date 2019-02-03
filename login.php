@@ -37,7 +37,7 @@ if(isset($_POST["user"])&&isset($_POST["pass"])) {
         //redirect user to new page,using absolute path,per
         $host = $_SERVER["HTTP_HOST"];
         /*$path = rtrim(dirname($_SERVER["PHP_SELF"]),"/\\");*/
-        header("Location:http://$host/xampp/project/html/homepage.html");
+        header("Location:http://$host/xampp/project/html/homepage.php");
     }
     else{
 
