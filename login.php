@@ -9,7 +9,10 @@ The Document is written for course project, building dynamic websites.
  */
 /*ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '717398Bht';*/
 /*由上面SQL更改数据库的连接--phpstorm*/
+
 session_start();
+$path = rtrim(dirname($_SERVER["PHP_SELF"]),"/\\");
+
 if(($connection = mysqli_connect("localhost","root","717398Bht","project"))===false) {/*返回link连接数据库*/
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
@@ -26,7 +29,9 @@ if(isset($_POST["user"])&&isset($_POST["pass"])) {
 
     //execute query
     $result = mysqli_query($connection,$sql);//mixed types
-
+    $host = $_SERVER["HTTP_HOST"];
+    //echo $host;
+    $path = rtrim(dirname($_SERVER["PHP_SELF"]),"/\\");
     if($result ===FALSE)
         die("Could not open database");//在用户交互中显得不太友好
     //check whether we found a row
@@ -35,13 +40,12 @@ if(isset($_POST["user"])&&isset($_POST["pass"])) {
         //remember that user's logged in
         $_SESSION["authenticated"] = true;
         //redirect user to new page,using absolute path,per
-        $host = $_SERVER["HTTP_HOST"];
-        /*$path = rtrim(dirname($_SERVER["PHP_SELF"]),"/\\");*/
-        header("Location:http://$host/xampp/project/html/homepage.php");
+
+        header("Location:http://$host$path/homepage.php");
     }
     else{
 
-        header("Location:http://localhost/xampp/project/html/Login Page.html");
+        header("Location:http://$host/project/html/Login Page.html");
     }
     /* URL->http://localhost/xampp/project/php/login.php
      * $_SERVER["HTTP_HOST"]->      localhost
