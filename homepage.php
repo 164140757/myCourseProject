@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>homepage</title>
     <meta charset="UTF-8"/>
     <script src="../js/echarts.min.js" type="text/javascript" charset="UTF-8"></script>
-    <script src="../js/jquery/test/data/jquery-1.9.1.js" type="text/javascript" charset="UTF-8  "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="UTF-8  "></script>
 </head>
 <body>
-<div id="container" style="width=600px;height=400px;"></div>
+<div id="container" style="width:600px;height:400px;"></div>
 
 <script type="text/javascript">
     //Get data from $varible ->array (js)
-    let products =[],product_ID=[],amount=[];
+    var products =[],product_ID=[],amount=[];
     //examples like this -> 实现了php变量到js array的转化。
 
     function getdata() {
@@ -28,19 +29,20 @@
                         product_ID.push(result[i].product_ID);
                         amount.push(result[i].amount);
                     }
+
                 }
             },
             error: function (errmsg) {
                 alert("Ajax data is wrong！" + errmsg);
             }
         });
-        return products, amount;
+        // return products, amount;
     }
 getdata();
-
     // get a echart!
-    const myChart = echarts.init(document.getElementById('container'));
-    const options ={
+
+    var myChart = echarts.init(document.getElementById('container'));
+    var options ={
         title : {
             text:'Fake information for practices'
         },
@@ -49,13 +51,14 @@ getdata();
             data:['Numbers']
         },
         xAxis:{
-            data:[{name:products}]
+           data:products
         },
-        series:{
+        yAxis:{},
+        series:[{
             name:'Amount',
             type:'bar',/*柱状图*/
-            data:[{value:amount}]
-        }
+            data:amount
+        }]
     };
 
     myChart.setOption(options);
