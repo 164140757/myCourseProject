@@ -8,8 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="UTF-8  "></script>
 </head>
 <body>
-<div id="container" style="width:600px;height:400px;"></div>
+<h1 align="center">欢迎来到我的测试</h1>
 
+<div id="container" style="width:600px;height:400px;"></div>
 <script type="text/javascript">
     //Get data from $varible ->array (js)
     var products =[],product_ID=[],amount=[];
