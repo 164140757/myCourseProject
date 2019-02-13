@@ -15,13 +15,29 @@ session_start();
     <meta charset="UTF-8">
     <title>Login</title>
     <link href="../css/diy.css" type="text/css" rel="stylesheet">
+    <script>
+        function validate(f)
+        {
+            if(f.user.value === "")
+            {
+                alert("您未输入用户名");
+                return false;
+            }
+            else if (f.pass.value === "")
+            {
+                alert("请输入密码");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <?php
 if(isset($_SESSION["authenticated"]))
 if($_SESSION["authenticated"]==false)
     echo("<script>alert('用户名和密码不匹配！请重新输入');</script>");
-?>
+?><!--验证通过-->
 
 <div class="header" >
     <div class="header_audio">
@@ -33,7 +49,7 @@ if($_SESSION["authenticated"]==false)
 <div class="bg_img" style="background-image:url(../img/photo.jpg);"></div>
 <div class="container">
  <div id="content">
-<form action="login.php" method="post">
+<form action="login.php" method="post" onsubmit="return validate(this)">
 
     <p style="font-size: 25px;margin-left: 50px"> 登录</p>
     <p><label for="user">用户名</label></p><input name="user" type="text" id="user"/>

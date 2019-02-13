@@ -1,4 +1,10 @@
+<!--文档说明
+Author：白皓天(Haotian Bai)
+Goal：构建动态网站(Building Dynamic Websites)
+The Document is written for course project, building dynamic websites.
 
+2019.1.31-2019.2.20
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
